@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.yemeksepetiuygulamasi.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/gecis"
+            app:destination="@id/sepeteEkleFragment" />
+        <action
+            android:id="@+id/bakgecis"
+            app:destination="@id/fullscreenFragment" />
+        <action
+            android:id="@+id/sepetGetir"
+            app:destination="@id/sepetYemekGetirFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepeteEkleFragment"
+        android:name="com.example.yemeksepetiuygulamasi.ui.fragment.SepeteEkleFragment"
+        android:label="fragment_sepete_ekle"
+        tools:layout="@layout/fragment_sepete_ekle" >
+        <argument
+            android:name="yemek"
+            app:argType="com.example.yemeksepetiuygulamasi.data.entity.Yemekler" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetYemekGetirFragment"
+        android:name="com.example.yemeksepetiuygulamasi.ui.fragment.SepetYemekGetirFragment"
+        android:label="fragment_sepet_yemek_getir"
+        tools:layout="@layout/fragment_sepet_yemek" >
+        <argument
+            android:name="sepetgetir"
+            app:argType="com.example.yemeksepetiuygulamasi.data.entity.sepet_yemekler" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullscreenFragment"
+        android:name="com.example.yemeksepetiuygulamasi.FullscreenFragment"
+        android:label="fragment_fullscreen"
+        tools:layout="@layout/fragment_fullscreen" />
+</navigation>
